@@ -1,0 +1,312 @@
+:root {
+    color-scheme: light;
+    --page-background: #f5f0e6;
+    --text-color: #111111;
+    --surface-color: #fffdf8;
+    --border-color: rgba(17, 17, 17, 0.18);
+    --field-background: #fffdf8;
+    --button-text: #f5f0e6;
+    --button-hover-text: #f5f0e6;
+    --important-color: #111111;
+    --interactive-hover: #2b2b2b;
+    --interactive-accent: #111111;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+    --page-background: #111111;
+    --text-color: #f5f0e6;
+    --surface-color: #1b1b1b;
+    --border-color: rgba(245, 240, 230, 0.18);
+    --field-background: #171717;
+    --button-text: #111111;
+    --button-hover-text: #f5f0e6;
+    --important-color: #f5f0e6;
+    --interactive-hover: #262626;
+    --interactive-accent: #f5f0e6;
+}
+
+.penting {
+    color: var(--important-color);
+}
+
+.theme-toggle {
+    min-height: 44px;
+    padding: 9px 14px;
+    border: 1px solid rgba(245, 240, 230, 0.55);
+    border-radius: 20px;
+    background-color: transparent;
+    color: #f5f0e6;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+    background-color: #f5f0e6;
+    color: #111111;
+}
+
+.theme-toggle:active {
+    transform: scale(0.97);
+}
+
+.marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    border: 1px solid #000000;
+    border-left: 6px solid #000000;
+    border-radius: 12px;
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-gerak 24s linear infinite;
+}
+
+.marquee h1 {
+    flex: none;
+    width: max-content;
+    margin: 0;
+    padding: 18px 56px 18px 24px;
+    color: inherit;
+    font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+    line-height: 1.35;
+    white-space: nowrap;
+}
+
+@keyframes marquee-gerak {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    padding: 14px 20px;
+    background-color: #111111;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.site-logo {
+    color: #f5f0e6;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 1.35;
+}
+
+.nav-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 1px solid rgba(245, 240, 230, 0.55);
+    border-radius: 8px;
+    color: #f5f0e6;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-login:hover,
+.nav-login:focus-visible,
+.nav-login[aria-current="page"] {
+    background-color: #f5f0e6;
+    color: #111111;
+}
+
+.nav-links {
+    display: none;
+    flex: 1 0 100%;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 8px;
+    border: 1px solid rgba(245, 240, 230, 0.14);
+    border-radius: 12px;
+    background-color: #1b1b1b;
+    list-style: none;
+}
+
+.nav-links.is-open {
+    display: flex;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #f5f0e6;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    background-color: #2b2b2b;
+    color: #ffffff;
+}
+
+.nav-links a[aria-current="page"] {
+    background-color: #2b2b2b;
+    color: #ffffff;
+}
+
+.nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-width: 84px;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1px solid rgba(245, 240, 230, 0.55);
+    border-radius: 8px;
+    background: transparent;
+    color: #f5f0e6;
+    font: inherit;
+    cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible,
+.nav-toggle[aria-expanded="true"] {
+    background-color: #f5f0e6;
+    color: #111111;
+}
+
+.menu-icon {
+    display: grid;
+    gap: 4px;
+    width: 18px;
+}
+
+.menu-icon span {
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    background-color: currentColor;
+}
+
+@media (max-width: 760px) {
+    .site-nav {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 12px 16px;
+    }
+
+    .site-logo {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .nav-links {
+        display: none;
+        flex: 1 0 100%;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .nav-links.is-open {
+        display: flex;
+    }
+
+    .nav-links li {
+        display: block;
+    }
+
+    .nav-links a,
+    .nav-links .theme-toggle {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-start;
+        min-height: 44px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        text-align: left;
+    }
+
+    .nav-links .theme-toggle {
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .marquee h1 {
+        padding: 14px 36px 14px 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .site-nav {
+        gap: 8px;
+    }
+
+    .nav-toggle {
+        min-width: 44px;
+        width: 44px;
+        padding: 8px;
+    }
+
+    .menu-label {
+        display: none;
+    }
+
+    .site-logo {
+        font-size: 0.9rem;
+    }
+
+    .nav-login {
+        min-height: 40px;
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 300px) {
+    .site-logo {
+        flex: 1 0 calc(100% - 52px);
+    }
+
+    .nav-login {
+        margin-left: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .theme-toggle,
+    .nav-toggle,
+    .nav-links a,
+    .nav-login {
+        transition: none;
+    }
+}

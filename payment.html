@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buat permintaan bayaran untuk Kelab Teknologi Digital.">
+    <title>Pembayaran | Kelab Teknologi Digital</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+    <header>
+        <nav class="site-nav" aria-label="Navigasi utama">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Buka menu navigasi">
+                <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span class="menu-label">Menu</span>
+            </button>
+            <a class="site-logo" href="index.html">KELAB TEKNOLOGI DIGITAL</a>
+            <a class="nav-login" href="login.html">Log Masuk</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Laman Utama</a></li>
+                <li><a href="about.html">Tentang Kelab</a></li>
+                <li><a href="register.html">Pendaftaran</a></li>
+                <li><a href="payment.html" aria-current="page">Bayaran</a></li>
+                <li><button class="theme-toggle" type="button" aria-label="Tukar ke mod gelap">Mod Gelap</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="payment-page">
+        <h1>SISTEM PEMBAYARAN KELAB</h1>
+        <p class="payment-intro">Isi maklumat bayaran untuk yuran keahlian, aktiviti atau sumbangan.</p>
+
+        <aside class="payment-notice" aria-label="Maklumat penting">
+            <strong>Nota:</strong> Ini ialah prototaip. Tiada wang akan dipindahkan dan maklumat anda tidak
+            dihantar atau disimpan. Untuk bayaran sebenar, dapatkan butiran daripada bendahari dan
+            sahkan bayaran secara terus dengannya.
+        </aside>
+
+        <div class="payment-layout">
+            <aside class="payment-visual" aria-label="Ilustrasi kad pembayaran kelab">
+                <p class="payment-visual-label">KELAB TEKNOLOGI DIGITAL</p>
+                <div class="payment-card-stack" aria-hidden="true">
+                    <div class="mock-payment-card mock-payment-card-back">
+                        <span class="mock-card-chip"></span>
+                        <span class="mock-card-mark">KTD</span>
+                    </div>
+                    <div class="mock-payment-card mock-payment-card-middle">
+                        <span class="mock-card-chip"></span>
+                        <span class="mock-card-number">•••• &nbsp; •••• &nbsp; •••• &nbsp; 2026</span>
+                        <span class="mock-card-mark">KELAB</span>
+                    </div>
+                    <div class="mock-payment-card mock-payment-card-front">
+                        <span class="mock-card-chip"></span>
+                        <span class="mock-card-number">•••• &nbsp; •••• &nbsp; •••• &nbsp; 2026</span>
+                        <span class="mock-card-mark">KELAB TEKNOLOGI DIGITAL</span>
+                    </div>
+                </div>
+                <p class="payment-visual-footer">Prototaip sahaja · Tiada transaksi sebenar</p>
+            </aside>
+
+            <form class="payment-form" id="payment-form">
+                <div class="payment-form-header">
+                    <h2>Maklumat Bayaran</h2>
+                    <p>Lengkapkan butiran permintaan bayaran anda.</p>
+                </div>
+
+                <div class="payment-fields">
+                    <div class="payment-field">
+                        <label for="payer-name">Nama pembayar</label>
+                        <input id="payer-name" name="payerName" type="text" autocomplete="name" maxlength="100" required>
+                    </div>
+
+                    <div class="payment-field">
+                        <label for="payment-purpose">Tujuan bayaran</label>
+                        <select id="payment-purpose" name="purpose" required>
+                            <option value="">Pilih tujuan bayaran</option>
+                            <option value="Yuran keahlian">Yuran keahlian</option>
+                            <option value="Yuran aktiviti">Yuran aktiviti</option>
+                            <option value="Sumbangan">Sumbangan</option>
+                            <option value="Lain-lain">Lain-lain</option>
+                        </select>
+                    </div>
+
+                    <div class="payment-field">
+                        <label for="payment-amount">Jumlah (RM)</label>
+                        <input id="payment-amount" name="amount" type="number" min="0.01" max="100000" step="0.01" inputmode="decimal" required>
+                    </div>
+
+                    <div class="payment-field">
+                        <label for="payment-method">Kaedah bayaran</label>
+                        <select id="payment-method" name="method" required>
+                            <option value="">Pilih kaedah bayaran</option>
+                            <option value="bank">Pindahan bank (pengesahan manual)</option>
+                            <option value="cash">Tunai kepada bendahari</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p class="payment-method-note" id="payment-method-note" aria-live="polite">
+                    Pilih kaedah untuk melihat arahan bayaran.
+                </p>
+
+                <button type="submit">Teruskan permintaan bayaran</button>
+            </form>
+        </div>
+
+        <section class="payment-result" id="payment-result" aria-live="polite" hidden>
+            <h2>Permintaan bayaran disediakan</h2>
+            <dl class="payment-summary">
+                <div><dt>Rujukan</dt><dd id="result-reference"></dd></div>
+                <div><dt>Pembayar</dt><dd id="result-name"></dd></div>
+                <div><dt>Tujuan</dt><dd id="result-purpose"></dd></div>
+                <div><dt>Jumlah</dt><dd id="result-amount"></dd></div>
+                <div><dt>Kaedah</dt><dd id="result-method"></dd></div>
+                <div><dt>Status</dt><dd><strong>Menunggu pengesahan bendahari</strong></dd></div>
+            </dl>
+            <p class="payment-note">
+                Tiada transaksi sebenar berlaku. Hubungi bendahari dan berikan nombor rujukan ini
+                untuk mengesahkan bayaran.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Kelab Teknologi Digital JMTI. Hak cipta terpelihara.</p>
+        </div>
+    </footer>
+    <script src="theme.js"></script>
+    <script src="payment.js"></script>
+</body>
+</html>

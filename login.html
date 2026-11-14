@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Masuk Ahli Kelab | Kelab Teknologi Digital</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+
+    <header>
+        <nav class="site-nav" aria-label="Navigasi utama">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Buka menu navigasi">
+                <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span class="menu-label">Menu</span>
+            </button>
+            <a class="site-logo" href="index.html">KELAB TEKNOLOGI DIGITAL</a>
+            <a class="nav-login" href="login.html" aria-current="page">Log Masuk</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Laman Utama</a></li>
+                <li><a href="about.html">Tentang Kelab</a></li>
+                <li><a href="register.html">Pendaftaran</a></li>
+                <li><a href="payment.html">Bayaran</a></li>
+                <li>
+                    <button class="theme-toggle" type="button" aria-label="Tukar ke mod gelap">
+                        Mod Gelap
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="register-page">
+        <h1>LOG MASUK AHLI KELAB</h1>
+        <p>Masukkan emel atau nama pengguna dan kata laluan akaun anda.</p>
+
+        <form class="register-form" action="#" method="post">
+            <label for="username">Emel / Nama Pengguna *</label>
+            <input type="text" id="username" name="username" autocomplete="username" required>
+
+            <label for="kata-laluan">Kata Laluan *</label>
+            <input type="password" id="kata-laluan" name="kata-laluan" autocomplete="current-password" required>
+            
+            <a class="forgot-password" href="#lupa-kata-laluan">Lupa Kata Laluan?</a>
+
+            <button type="submit">Log Masuk</button>
+        </form>
+
+        <div class="auth-links">
+            <p>Belum mempunyai akaun? <br> <a class="translate kad-interaktif" href="register.html">Daftar hari ini</a></p>
+            <p><a class="translate kad-interaktif single-line" href="index.html">Kembali ke Halaman Utama</a></p>
+        </div>
+
+        <p class="form-note">Nota: Borang ini belum disambungkan kepada sistem pangkalan data akaun.</p>
+        <p id="lupa-kata-laluan" class="form-note">Untuk bantuan menetapkan semula kata laluan, sila hubungi penasihat kelab.</p>
+    </main>
+
+    <script src="theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Ahli | Kelab Teknologi Digital</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+
+    <header>
+        <nav class="site-nav" aria-label="Navigasi utama">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Buka menu navigasi">
+                <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span class="menu-label">Menu</span>
+            </button>
+            <a class="site-logo" href="index.html">KELAB TEKNOLOGI DIGITAL</a>
+            <a class="nav-login" href="login.html">Log Masuk</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Laman Utama</a></li>
+                <li><a href="about.html">Tentang Kelab</a></li>
+                <li><a href="register.html" aria-current="page">Pendaftaran</a></li>
+                <li><a href="payment.html">Bayaran</a></li>
+                <li>
+                    <button class="theme-toggle" type="button" aria-label="Tukar ke mod gelap">
+                        Mod Gelap
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="register-page">
+        <h1>BORANG PENDAFTARAN AHLI KELAB</h1>
+        <p>Isi maklumat di bawah jika berminat menyertai kelab.</p>
+
+        <form class="register-form" action="#" method="post">
+            <h2>Maklumat Peribadi</h2>
+
+            <label for="nama">Nama penuh *</label>
+            <input type="text" id="nama" name="nama" maxlength="100" required>
+
+            <label for="identiti">No. Kad Pengenalan *</label>
+            <input type="text" id="identiti" name="identiti" maxlength="12" 
+                   inputmode="numeric" pattern="[0-9]{12}" placeholder="Contoh: 040101101234" required>
+
+            <label for="student_id">No. pelajar *</label>
+            <input type="text" id="student_id" name="student_id" maxlength="20" required>
+
+            <label for="emel">Alamat e-mel *</label>
+            <input type="email" id="emel" name="emel" placeholder="nama@contoh.com" required>
+
+            <label for="telefon">No. telefon *</label>
+            <input type="tel" id="telefon" name="telefon"
+                   inputmode="numeric" pattern="[0-9]{10,11}" placeholder="Contoh: 0123456789" required>
+
+            <h2>Maklumat Akademik & Minat</h2>
+
+            <label for="kursus">Program / Kursus *</label>
+            <input type="text" id="kursus" name="kursus" maxlength="100" required>
+
+            <label for="semester">Semester semasa *</label>
+            <select id="semester" name="semester" required>
+                <option value="">-- Sila pilih semester --</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6 ke atas</option>
+            </select>
+
+            <label for="minat">Bidang minat utama</label>
+            <select id="minat" name="minat">
+                <option value="web">Pembangunan Web</option>
+                <option value="ai">Kecerdasan Buatan (AI)</option>
+                <option value="cyber">Keselamatan Siber</option>
+                <option value="design">Reka Bentuk UI/UX & Multimedia</option>
+            </select>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">Daftar Sekarang</button>
+                <button type="reset" class="btn-reset">Set Semula</button>
+            </div>
+        
+            <p>Sudah memiliki akaun?
+                <a class="translate" href="login.html">Log masuk di sini</a>
+            </p>
+
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Kelab Teknologi Digital. Hak cipta terpelihara.</p>
+        </div>
+    </footer>
+
+    <script src="theme.js"></script>
+</body>
+</html>
