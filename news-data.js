@@ -29,7 +29,7 @@ function normalizeNewsArticle(article) {
         !article.summary.trim() ||
         typeof article.source !== "string" ||
         !article.source.trim() ||
-        (article.category !== "Keselamatan Siber" && article.category !== "Teknologi")
+        !["Keselamatan Siber", "Teknologi", "TVET"].includes(article.category)
     ) {
         return null;
     }
