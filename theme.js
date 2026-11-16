@@ -32,6 +32,7 @@ if (menuButton && navLinks) {
             isOpen ? "Tutup menu navigasi" : "Buka menu navigasi"
         );
         navLinks.classList.toggle("is-open", isOpen);
+        document.body.classList.toggle("menu-open", isOpen);
     }
 
     menuButton.addEventListener("click", function () {
@@ -159,3 +160,68 @@ reducedMotionQuery.addEventListener("change", function (event) {
         stopWheelScroll();
     }
 });
+
+const newsSlider = document.querySelector(".news-slider-section");
+if (newsSlider) {
+    const sliderTrack = newsSlider.querySelector(".slider-track");
+    const newsSlides = Array.from(newsSlider.querySelectorAll(".news-slide"));
+    const slideDots = Array.from(newsSlider.querySelectorAll(".slider-dots .dot"));
+    const previousSlideButton = newsSlider.querySelector(".prev-btn");
+    const nextSlideButton = newsSlider.querySelector(".next-btn");
+
+    if (
+        sliderTrack &&
+        newsSlides.length > 0 &&
+        slideDots.length === newsSlides.length &&
+        previousSlideButton &&
+        nextSlideButton
+    ) {
+        let currentSlide = Math.max(
+            newsSlides.findIndex(function (slide) {
+                return slide.classList.contains("active");
+            }),
+            0
+        );
+
+        function showNewsSlide(index) {
+            currentSlide = (index + newsSlides.length) % newsSlides.length;
+            sliderTrack.style.transform = "translateX(-" + currentSlide * 100 + "%)";
+
+            newsSlides.forEach(function (slide, slideIndex) {
+                const isActive = slideIndex === currentSlide;
+                slide.classList.toggle("active", isActive);
+                slide.setAttribute("aria-hidden", String(!isActive));
+                slide.toggleAttribute("inert", !isActive);
+            });
+
+            slideDots.forEach(function (dot, dotIndex) {
+                const isActive = dotIndex === currentSlide;
+                dot.classList.toggle("active", isActive);
+                if (isActive) {
+                    dot.setAttribute("aria-current", "true");
+                } else {
+                    dot.removeAttribute("aria-current");
+                }
+            });
+        }
+
+        previousSlideButton.addEventListener("click", function () {
+            showNewsSlide(currentSlide - 1);
+        });
+
+        nextSlideButton.addEventListener("click", function () {
+            showNewsSlide(currentSlide + 1);
+        });
+
+        slideDots.forEach(function (dot, index) {
+            dot.addEventListener("click", function () {
+                showNewsSlide(index);
+            });
+        });
+
+        showNewsSlide(currentSlide);
+        newsSlider.addEventListener("news:data-updated", function () {
+            showNewsSlide(0);
+        });
+    }
+}

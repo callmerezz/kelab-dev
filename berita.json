@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "articles": [
+    {
+      "id": "vmware-vcenter-log4shell",
+      "title": "Penggodam Eksploitasi Kerentanan Log4Shell pada VMware vCenter",
+      "url": "https://thehackernews.com/2026/11/bo-team-exploits-log4shell-in-vmware.html",
+      "summary": "Kumpulan penggodam BO Team dikesan mengeksploitasi kelemahan pada pelayan VMware vCenter dan infrastruktur pembangunan perisian (CI/CD) bagi melancarkan serangan rantaian bekalan.",
+      "publishedAt": "2026-11-16T00:00:00.000Z",
+      "source": "The Hacker News",
+      "category": "Teknologi",
+      "image": null
+    },
+    {
+      "id": "ai-ransomware",
+      "title": "Serangan AI, ransomware ancaman siber paling membimbangkan",
+      "url": "https://www.bharian.com.my/berita/nasional/2026/11/1715754/serangan-ai-ransomware-ancaman-siber-paling-membimbangkan",
+      "summary": "Penggunaan kecerdasan buatan (AI) oleh penjenayah siber serta serangan perisian tebusan (ransomware) dikenal pasti sebagai ancaman paling kritikal terhadap keselamatan digital masa kini.",
+      "publishedAt": "2026-11-15T00:00:00.000Z",
+      "source": "Berita Harian",
+      "category": "Keselamatan Siber",
+      "image": null
+    },
+    {
+      "id": "malaysia-cyber-attacks",
+      "title": "Negara berdepan ribuan serangan siber dalam sebulan",
+      "url": "https://www.utusan.com.my/nasional/2026/11/negara-berdepan-ribuan-serangan-siber-dalam-sebulan/",
+      "summary": "Malaysia merekodkan ribuan cubaan pencerobohan siber setiap bulan, sekali gus menuntut keupayaan pertahanan digital dan sistem komunikasi negara terus diperkukuh.",
+      "publishedAt": "2026-11-14T00:00:00.000Z",
+      "source": "Utusan Malaysia",
+      "category": "Keselamatan Siber",
+      "image": null
+    }
+  ]
+}

@@ -20,12 +20,33 @@
             <a class="site-logo" href="index.html">KELAB TEKNOLOGI DIGITAL</a>
             <a class="nav-login" href="login.html">Log Masuk</a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Laman Utama</a></li>
+                <li><a href="index.html" aria-current="page">Laman Utama</a></li>
                 <li><a href="about.html">Tentang Kelab</a></li>
                 <li><a href="register.html">Pendaftaran</a></li>
                 <li><a href="payment.html">Bayaran</a></li>
+                <li><a href="berita.html">Berita</a></li>
                 <li><button class="theme-toggle" type="button" aria-label="Tukar ke mod gelap">Mod Gelap</button></li>
             </ul>
+            <section class="nav-contact" aria-labelledby="nav-contact-title">
+                <h2 id="nav-contact-title">Hubungi Kami</h2>
+                <p class="nav-contact-phone">Telefon: <a href="tel:+60195263213">019-526-3213</a></p>
+                <p class="nav-contact-email">E-mel rasmi: <a href="mailto:rashidredza07@icloud.com">rashidredza07@icloud.com</a></p>
+                <div class="nav-social-links" aria-label="Media sosial kelab">
+                    <a class="nav-social-link" href="https://www.instagram.com/callmerezzz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Kelab Teknologi Digital">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="18" cy="6" r="1"></circle></svg>
+                        <span>Instagram</span>
+                    </a>
+                    <a class="nav-social-link" href="https://www.tiktok.com/@simplyrezz._" target="_blank" rel="noopener noreferrer" aria-label="TikTok Kelab Teknologi Digital">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v11.2a3.3 3.3 0 1 1-3-3.3"></path><path d="M14 4c.5 2.5 2.2 4.1 4.5 4.5"></path></svg>
+                        <span>TikTok</span>
+</a>
+<a class="nav-social-link" href="https://github.com/callmerezz" target="_blank" rel="noopener noreferrer" aria-label="GitHub Kelab Teknologi Digital">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+    <span>GitHub</span>
+                    </a>
+                </div>
+                <a class="nav-project-link" href="https://github.com/callmerezz/kelab-teknologi-digital" target="_blank" rel="noopener noreferrer">Lihat projek GitHub</a>
+            </section>
         </nav>
     </header>
 
@@ -56,29 +77,95 @@
 
     <hr>
 
-    <h2 id="berita">PORTAL BERITA</h2>
-    <section class="news-grid" aria-labelledby="berita">
-        <article class="news-card kad-interaktif">
-            <span class="news-tag">Aktiviti</span>
-            <h3>Workshop HTML & CSS untuk ahli baru</h3>
-            <p>Ahli kelab akan mempelajari asas pembinaan laman web, layout responsif, dan teknik reka bentuk yang sesuai untuk projek digital.</p>
-            <time datetime="2026-11-15">15 Nov 2026</time>
-        </article>
+    <section class="news-slider-section" id="portal-berita" aria-label="Portal Berita Teknologi" aria-roledescription="karusel">
+    <div class="slider-header">
+        <h2>Berita & Keselamatan Siber</h2>
+        <div class="slider-controls">
+            <button class="slider-btn prev-btn" type="button" aria-label="Berita sebelumnya" aria-controls="berita-track">&#10094;</button>
+            <button class="slider-btn next-btn" type="button" aria-label="Berita seterusnya" aria-controls="berita-track">&#10095;</button>
+        </div>
+    </div>
 
-        <article class="news-card kad-interaktif">
-            <span class="news-tag">Pengumuman</span>
-            <h3>Pendaftaran ahli sesi 2026 dibuka</h3>
-            <p>Semester ini, kelab membuka peluang penyertaan kepada pelajar yang berminat dalam teknologi, pengaturcaraan dan inovasi digital.</p>
-            <time datetime="2026-11-01">01 Nov 2026</time>
-        </article>
+    <p id="home-news-status" class="news-load-status" role="status" aria-live="polite">Memuat berita terkini...</p>
+    <div class="slider-container" aria-live="polite">
+        <div class="slider-track" id="berita-track">
+            <!-- Slide 1 -->
+            <article class="news-slide active" aria-roledescription="slaid" aria-hidden="false">
+                <img class="slide-image" src="berita-ai-ransomware.svg" alt="Ilustrasi perisai digital menghadapi ancaman AI" decoding="async">
+                <div class="slide-content">
+                    <span class="news-tag">Keselamatan Siber</span>
+                    <h3>
+                        <a href="https://www.bharian.com.my/berita/nasional/2026/11/1715754/serangan-ai-ransomware-ancaman-siber-paling-membimbangkan" target="_blank" rel="noopener noreferrer">
+                            Serangan AI, ransomware ancaman siber paling membimbangkan
+                        </a>
+                    </h3>
+                    <p>Penggunaan kecerdasan buatan (AI) oleh penjenayah siber serta serangan perisian tebusan (ransomware) dikenal pasti sebagai ancaman paling kritikal terhadap keselamatan digital masa kini.</p>
+                    <a class="news-details-link" href="berita.html#berita-ai">Baca ringkasan penuh <span aria-hidden="true">&rarr;</span></a>
+                    <div class="news-meta">
+                        <time datetime="2026-11-15">15 Nov 2026</time>
+                        <span>&bull;</span>
+                        <span class="news-source">Sumber:
+                                <a href="https://www.bharian.com.my/berita/nasional/2026/11/1715754/serangan-ai-ransomware-ancaman-siber-paling-membimbangkan" target="_blank" rel="noopener noreferrer">Berita Harian</a>
+                        </span>
+                    </div>
+                </div>
+            </article>
 
-        <article class="news-card kad-interaktif">
-            <span class="news-tag">Program</span>
-            <h3>Program coding challenge minggu ke-3</h3>
-            <p>Peserta akan berlatih menyelesaikan cabaran pengaturcaraan secara berkumpulan sambil membina keyakinan dalam komunikasi dan kerja pasukan.</p>
-            <time datetime="2026-10-22">22 Okt 2026</time>
-        </article>
-    </section>
+            <!-- Slide 2 -->
+            <article class="news-slide" aria-roledescription="slaid" aria-hidden="true" inert>
+                <img class="slide-image" src="berita-pertahanan-siber.svg" alt="Ilustrasi pertahanan rangkaian dengan perisai keselamatan" decoding="async">
+                <div class="slide-content">
+                    <span class="news-tag">Keselamatan Siber</span>
+                    <h3>
+                            <a href="https://www.utusan.com.my/nasional/2026/11/negara-berdepan-ribuan-serangan-siber-dalam-sebulan/" target="_blank" rel="noopener noreferrer">
+                            Negara berdepan ribuan serangan siber dalam sebulan
+                        </a>
+                    </h3>
+                    <p>Malaysia merekodkan ribuan cubaan pencerobohan siber setiap bulan, sekali gus menuntut keupayaan pertahanan digital dan sistem komunikasi negara terus diperkukuh.</p>
+                    <a class="news-details-link" href="berita.html#pertahanan-siber">Baca ringkasan penuh <span aria-hidden="true">&rarr;</span></a>
+                    <div class="news-meta">
+                        <time datetime="2026-11-14">14 Nov 2026</time>
+                        <span>&bull;</span>
+                        <span class="news-source">Sumber:
+                            <a href="https://www.utusan.com.my/nasional/2026/11/negara-berdepan-ribuan-serangan-siber-dalam-sebulan/" target="_blank" rel="noopener noreferrer">Utusan Malaysia</a>
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Slide 3 -->
+            <article class="news-slide" aria-roledescription="slaid" aria-hidden="true" inert>
+                <img class="slide-image" src="berita-vcenter.svg" alt="Ilustrasi pelayan dan rangkaian perisian" decoding="async">
+                <div class="slide-content">
+                    <span class="news-tag">Teknologi</span>
+                    <h3>
+                        <a href="https://thehackernews.com/2026/11/bo-team-exploits-log4shell-in-vmware.html" target="_blank" rel="noopener noreferrer">
+                            Penggodam Eksploitasi Kerentanan Log4Shell pada VMware vCenter
+                        </a>
+                    </h3>
+                    <p>Kumpulan penggodam BO Team dikesan mengeksploitasi kelemahan pada pelayan VMware vCenter dan infrastruktur pembangunan perisian (CI/CD) bagi melancarkan serangan rantaian bekalan.</p>
+                    <a class="news-details-link" href="berita.html#vmware-vcenter">Baca ringkasan penuh <span aria-hidden="true">&rarr;</span></a>
+                    <div class="news-meta">
+                        <time datetime="2026-11-16">16 Nov 2026</time>
+                        <span>&bull;</span>
+                        <span class="news-source">Sumber:
+                            <a href="https://thehackernews.com/2026/11/bo-team-exploits-log4shell-in-vmware.html" target="_blank" rel="noopener noreferrer">The Hacker News</a>
+                        </span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Titik Penunjuk (Dots) -->
+        <div class="slider-dots">
+            <button class="dot active" type="button" aria-label="Paparkan berita 1" aria-controls="berita-track" aria-current="true"></button>
+            <button class="dot" type="button" aria-label="Paparkan berita 2" aria-controls="berita-track"></button>
+            <button class="dot" type="button" aria-label="Paparkan berita 3" aria-controls="berita-track"></button>
+        </div>
+    </div>
+</section>
+
+
 
     <hr>
 
@@ -145,9 +232,10 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Kelab Teknologi Digital JMTI. Hak cipta terpelihara.</p>
+            <p>&copy; 2026 Kelab Teknologi Digital. Hak cipta terpelihara.</p>
         </div>
     </footer>
     <script src="theme.js"></script>
+    <script src="news-data.js"></script>
 </body>
 </html>

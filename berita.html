@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ringkasan berita teknologi dan keselamatan siber pilihan Kelab Teknologi Digital.">
+    <title>Berita Teknologi | Kelab Teknologi Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+    <header>
+        <nav class="site-nav" aria-label="Navigasi utama">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Buka menu navigasi">
+                <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span class="menu-label">Menu</span>
+            </button>
+            <a class="site-logo" href="index.html">KELAB TEKNOLOGI DIGITAL</a>
+            <a class="nav-login" href="login.html">Log Masuk</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Laman Utama</a></li>
+                <li><a href="about.html">Tentang Kelab</a></li>
+                <li><a href="register.html">Pendaftaran</a></li>
+                <li><a href="payment.html">Bayaran</a></li>
+                <li><a href="berita.html" aria-current="page">Berita</a></li>
+                <li><button class="theme-toggle" type="button" aria-label="Tukar ke mod gelap">Mod Gelap</button></li>
+            </ul>
+            <section class="nav-contact" aria-labelledby="nav-contact-title">
+                <h2 id="nav-contact-title">Hubungi Kami</h2>
+                <p class="nav-contact-phone">Telefon: <a href="tel:+60195263213">019-526-3213</a></p>
+                <p class="nav-contact-email">E-mel rasmi: <a href="mailto:rashidredza07@icloud.com">rashidredza07@icloud.com</a></p>
+                <div class="nav-social-links" aria-label="Media sosial kelab">
+                    <a class="nav-social-link" href="https://www.instagram.com/callmerezzz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Kelab Teknologi Digital">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="18" cy="6" r="1"></circle></svg>
+                        <span>Instagram</span>
+                    </a>
+                    <a class="nav-social-link" href="https://www.tiktok.com/@simplyrezz._" target="_blank" rel="noopener noreferrer" aria-label="TikTok Kelab Teknologi Digital">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v11.2a3.3 3.3 0 1 1-3-3.3"></path><path d="M14 4c.5 2.5 2.2 4.1 4.5 4.5"></path></svg>
+                        <span>TikTok</span>
+                    </a>
+                    <a class="nav-social-link" href="https://github.com/callmerezz" target="_blank" rel="noopener noreferrer" aria-label="GitHub Kelab Teknologi Digital">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <a class="nav-project-link" href="https://github.com/callmerezz/kelab-teknologi-digital" target="_blank" rel="noopener noreferrer">Lihat projek GitHub</a>
+            </section>
+        </nav>
+    </header>
+
+    <main class="news-page">
+        <a class="news-back-link" href="index.html#portal-berita">&larr; Kembali ke portal utama</a>
+        <header class="news-page-header">
+            <span class="news-tag">Portal Teknologi</span>
+            <h1>Berita &amp; Keselamatan Siber</h1>
+            <p>Ringkasan berita teknologi pilihan. Ikuti pautan sumber untuk membaca laporan penuh.</p>
+        </header>
+
+        <div class="news-filters" role="group" aria-label="Tapis berita mengikut kategori">
+            <button class="news-filter-button" type="button" data-news-filter="all" aria-pressed="true">Semua</button>
+            <button class="news-filter-button" type="button" data-news-filter="Teknologi" aria-pressed="false">Teknologi</button>
+            <button class="news-filter-button" type="button" data-news-filter="Keselamatan Siber" aria-pressed="false">Keselamatan Siber</button>
+        </div>
+        <p id="archive-news-status" class="news-load-status" role="status" aria-live="polite">Memuat berita terkini...</p>
+
+        <section class="news-archive" aria-label="Senarai berita terkini">
+            <article class="news-article" id="berita-ai" data-category="Keselamatan Siber" aria-labelledby="berita-ai-title">
+                <img class="news-article-image" src="berita-ai-ransomware.svg" alt="Ilustrasi perisai digital menghadapi ancaman AI" loading="lazy">
+                <div class="news-article-content">
+                    <span class="news-tag">Keselamatan Siber</span>
+                    <h2 id="berita-ai-title">Serangan AI, ransomware ancaman siber paling membimbangkan</h2>
+                    <p>Penggunaan kecerdasan buatan (AI) oleh penjenayah siber serta serangan perisian tebusan (ransomware) dikenal pasti sebagai ancaman paling kritikal terhadap keselamatan digital masa kini.</p>
+                    <div class="news-article-meta">
+                        <time datetime="2026-11-15">15 November 2026</time>
+                        <span>Sumber: Berita Harian</span>
+                    </div>
+                    <a class="news-source-link" href="https://www.bharian.com.my/berita/nasional/2026/11/1715754/serangan-ai-ransomware-ancaman-siber-paling-membimbangkan" target="_blank" rel="noopener noreferrer">Baca laporan asal <span aria-hidden="true">&nearr;</span></a>
+                </div>
+            </article>
+
+            <article class="news-article" id="pertahanan-siber" data-category="Keselamatan Siber" aria-labelledby="pertahanan-siber-title">
+                <img class="news-article-image" src="berita-pertahanan-siber.svg" alt="Ilustrasi pertahanan rangkaian dengan perisai keselamatan" loading="lazy">
+                <div class="news-article-content">
+                    <span class="news-tag">Keselamatan Siber</span>
+                    <h2 id="pertahanan-siber-title">Negara berdepan ribuan serangan siber dalam sebulan</h2>
+                    <p>Malaysia merekodkan ribuan cubaan pencerobohan siber setiap bulan, sekali gus menuntut keupayaan pertahanan digital dan sistem komunikasi negara terus diperkukuh.</p>
+                    <div class="news-article-meta">
+                        <time datetime="2026-11-14">14 November 2026</time>
+                        <span>Sumber: Utusan Malaysia</span>
+                    </div>
+                    <a class="news-source-link" href="https://www.utusan.com.my/nasional/2026/11/negara-berdepan-ribuan-serangan-siber-dalam-sebulan/" target="_blank" rel="noopener noreferrer">Baca laporan asal <span aria-hidden="true">&nearr;</span></a>
+                </div>
+            </article>
+
+            <article class="news-article" id="vmware-vcenter" data-category="Teknologi" aria-labelledby="vmware-vcenter-title">
+                <img class="news-article-image" src="berita-vcenter.svg" alt="Ilustrasi pelayan dan rangkaian perisian" loading="lazy">
+                <div class="news-article-content">
+                    <span class="news-tag">Teknologi</span>
+                    <h2 id="vmware-vcenter-title">Penggodam Eksploitasi Kerentanan Log4Shell pada VMware vCenter</h2>
+                    <p>Kumpulan penggodam BO Team dikesan mengeksploitasi kelemahan pada pelayan VMware vCenter dan infrastruktur pembangunan perisian (CI/CD) bagi melancarkan serangan rantaian bekalan.</p>
+                    <div class="news-article-meta">
+                        <time datetime="2026-11-16">16 November 2026</time>
+                        <span>Sumber: The Hacker News</span>
+                    </div>
+                    <a class="news-source-link" href="https://thehackernews.com/2026/11/bo-team-exploits-log4shell-in-vmware.html" target="_blank" rel="noopener noreferrer">Baca laporan asal <span aria-hidden="true">&nearr;</span></a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Kelab Teknologi Digital. Hak cipta terpelihara.</p>
+        </div>
+    </footer>
+    <script src="theme.js"></script>
+    <script src="news-data.js"></script>
+</body>
+</html>
