@@ -12,12 +12,7 @@ const FEEDS = [
     { name: "SoyaCincau", url: "https://soyacincau.com/feed/" },
     { name: "The Verge", url: "https://www.theverge.com/rss/index.xml" },
     { name: "TechCrunch", url: "https://techcrunch.com/feed/" },
-    { name: "The Hacker News", url: "https://feeds.feedburner.com/TheHackersNews" },
-    {
-        name: "Google News TVET Malaysia",
-        url: "https://news.google.com/rss/search?q=TVET+Malaysia&hl=ms&gl=MY&ceid=MY:ms",
-        category: "TVET"
-    }
+    { name: "The Hacker News", url: "https://feeds.feedburner.com/TheHackersNews" }
 ];
 
 const NAMED_ENTITIES = {
@@ -115,58 +110,17 @@ function getCategory(item, title, summary) {
         : "Teknologi";
 }
 
-function getArticleTitleAndSource(item, feed) {
-    const rawTitle = cleanHtml(item.title);
-    if (feed.category !== "TVET") {
-        return { title: rawTitle, source: feed.name };
-    }
-
-    const titleParts = rawTitle.match(/^(.+)\s[-\u2013\u2014]\s(.+)$/);
-    const title = titleParts ? titleParts[1].trim() : rawTitle;
-    const descriptionSource = String(item.description || "").match(
-        /<font\b[^>]*>([\s\S]*?)<\/font>/i
-    );
-    const explicitSource =
-        item.source && typeof item.source === "object"
-            ? item.source.title || item.source.name
-            : item.source;
-    const sourceCandidates = [
-        explicitSource,
-        descriptionSource && descriptionSource[1],
-        titleParts && titleParts[2],
-        item.author
-    ];
-    const source = sourceCandidates
-        .map(cleanHtml)
-        .find(function (candidate) {
-            return candidate && !/^google news$/i.test(candidate);
-        }) || "Google News";
-
-    return { title: title, source: source };
-}
-
 function normalizeArticle(item, feed) {
     if (!item || typeof item !== "object") {
         return null;
     }
 
-    const articleDetails = getArticleTitleAndSource(item, feed);
-    const title = articleDetails.title;
+    const title = cleanHtml(item.title);
     const url = normalizeHttpUrl(item.link);
     const publishedDate = parsePublishedDate(item.pubDate);
-    let summary = shortenSummary(item.description || item.content);
-    if (feed.category === "TVET") {
-        summary = summary
-            .replace(title, "")
-            .replace(articleDetails.source, "")
-            .replace(/^[\s\-:\u2013\u2014|]+|[\s\-:\u2013\u2014|]+$/g, "")
-            .trim();
-        if (!summary) {
-            summary = "Liputan TVET Malaysia daripada " + articleDetails.source + ".";
-        }
-    }
+    const summary = shortenSummary(item.description || item.content);
 
-    if (!title || !articleDetails.source || !url || !publishedDate || !summary) {
+    if (!title || !url || !publishedDate || !summary) {
         return null;
     }
 
@@ -179,8 +133,8 @@ function normalizeArticle(item, feed) {
         url: url,
         summary: summary,
         publishedAt: publishedDate.toISOString(),
-        source: articleDetails.source,
-        category: feed.category || getCategory(item, title, summary),
+        source: feed.name,
+        category: getCategory(item, title, summary),
         image: getImage(item)
     };
 }
